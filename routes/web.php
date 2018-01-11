@@ -18,3 +18,8 @@ Route::get('/', function () {
 Route::get('/register','RegistrationController@register');
 
 Route::post('/register','RegistrationController@postregister');
+
+Route::get('/login','LoginController@login');
+Route::post('/login','LoginController@postLogin');
+
+Route::post('/logout','LoginController@logout');
