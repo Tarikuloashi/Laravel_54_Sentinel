@@ -17,7 +17,13 @@ class LoginController extends Controller
     	Sentinel::authenticate($request->all());
 
     	// return Sentinel::check();
-    	return redirect('/login');
+    	//return redirect('/login');
+        $slugg=Sentinel::getUser()->roles()->first()->slug;
+
+        if($slugg=='admin')
+            return redirect('/earnings');
+        elseif($slugg=='manager')
+            return redirect('/tasks');
     }
 
     public function logout(){
