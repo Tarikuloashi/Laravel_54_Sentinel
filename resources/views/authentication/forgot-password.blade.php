@@ -4,22 +4,18 @@
 	<div class="container">
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
-			
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h3 class="panel-title text-center">Password Reset Form</h3>
 				</div>
-
-				<div class="panel-body">
-					
-											
+				<div class="panel-body">					
 					<form action="/forgot-password" method="POST">
 						{{csrf_field()}}
 							@if(session('success'))
-								<div class="alert alert-success bg-success" >
-									{{session('success')}}
-								</div>			
-							@endif
+							<div class="alert alert-success bg-success" >
+								{{session('success')}}
+							</div>			
+						@endif
 						<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
