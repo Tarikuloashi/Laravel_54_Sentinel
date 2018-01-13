@@ -3,24 +3,28 @@
 @section('content')
 	<div class="container">
 	<div class="row">
-		@if(session('error'))
-				<div class="alert alert-danger bg-success" >
-					{{session('error')}}
+		@if(session('success'))
+				<div class="alert alert-success bg-success" >
+					{{session('success')}}
 				</div>			
 			@endif
 		<div class="col-md-6 col-md-offset-3">
 			
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h3 class="panel-title">Login Form</h3>
+					<h3 class="panel-title text-center">Password Reset Form</h3>
 				</div>
 
 				<div class="panel-body">
 					
 											
-					<form action="/login" method="POST">
+					<form action="/forgot-password" method="POST">
 						{{csrf_field()}}
-
+							@if(session('success'))
+								<div class="alert alert-success bg-success" >
+									{{session('success')}}
+								</div>			
+							@endif
 						<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
@@ -28,17 +32,8 @@
 							</div>
 						</div>
 
-						
 						<div class="form-group">
-							<div class="input-group">
-								<span class="input-group-addon"><i class="fa fa-lock"></i></span>
-								<input type="password" name="password" class="form-control" placeholder="Password" required>
-							</div>
-						</div>
-						<a href="/forgot-password" class="bg-danger">Forgot my Password</a>
-
-						<div class="form-group">
-							<input type="submit" value="Login" class="btn btn-success pull-right">
+							<input type="submit" value="Password Reset link" class="btn btn-success pull-right">
 						</div>
 
 					</form>
