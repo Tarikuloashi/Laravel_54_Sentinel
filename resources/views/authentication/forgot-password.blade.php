@@ -3,11 +3,6 @@
 @section('content')
 	<div class="container">
 	<div class="row">
-		@if(session('success'))
-				<div class="alert alert-success bg-success" >
-					{{session('success')}}
-				</div>			
-			@endif
 		<div class="col-md-6 col-md-offset-3">
 			
 			<div class="panel panel-primary">

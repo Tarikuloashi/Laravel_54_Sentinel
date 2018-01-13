@@ -3,11 +3,7 @@
 @section('content')
 	<div class="container">
 	<div class="row">
-		@if(session('error'))
-				<div class="alert alert-danger bg-success" >
-					{{session('error')}}
-				</div>			
-			@endif
+		
 		<div class="col-md-6 col-md-offset-3">
 			
 			<div class="panel panel-primary">
@@ -20,6 +16,18 @@
 											
 					<form action="/login" method="POST">
 						{{csrf_field()}}
+
+						@if(session('error'))
+							<div class="alert alert-danger bg-success" >
+								{{session('error')}}
+							</div>			
+						@endif
+						
+						@if(session('success'))
+							<div class="alert alert-success bg-success" >
+								{{session('success')}}
+							</div>			
+						@endif
 
 						<div class="form-group">
 							<div class="input-group">
